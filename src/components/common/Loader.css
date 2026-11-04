@@ -1,0 +1,21 @@
+.common-loader {
+  display: flex;
+  min-height: 8rem;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  color: var(--color-text-muted);
+}
+
+.common-loader__spinner {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 3px solid var(--color-border);
+  border-top-color: var(--color-accent);
+  border-radius: 50%;
+  animation: common-loader-spin 0.7s linear infinite;
+}
+
+@keyframes common-loader-spin {
+  to { transform: rotate(360deg); }
+}

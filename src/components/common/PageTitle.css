@@ -1,0 +1,23 @@
+.page-title {
+  margin-bottom: var(--space-8);
+}
+
+.page-title__eyebrow {
+  margin: 0 0 var(--space-2);
+  color: var(--color-accent);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.page-title h1 {
+  margin: 0;
+  color: var(--color-heading);
+  font: 700 clamp(2rem, 5vw, 3.5rem)/1.15 var(--font-heading);
+}
+
+.page-title__description {
+  margin: var(--space-2) 0 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}

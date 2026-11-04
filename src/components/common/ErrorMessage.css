@@ -1,0 +1,12 @@
+.common-error {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-3);
+  padding: var(--space-8);
+  color: var(--color-danger);
+  text-align: center;
+}
+
+.common-error p {
+  margin: 0;
+}

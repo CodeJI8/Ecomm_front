@@ -1,0 +1,150 @@
+@media (min-width: 1500px) {
+  .home-page__category-card {
+    height: 350px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .home-page__category-grid {
+    gap: 13px;
+  }
+
+  .home-page__category-card {
+    height: 250px;
+  }
+}
+
+@media (max-width: 760px) {
+  .home-page__announcement {
+    font-size: 9px;
+  }
+
+  .home-page__hero {
+    height: 14rem;
+    min-height: 0;
+    margin: 0 3%;
+  }
+
+  .home-page__hero-image {
+    width: 62%;
+    object-position: center;
+  }
+
+  .home-page__hero-overlay {
+    background: linear-gradient(90deg, #f7eee6 0%, rgba(247, 238, 230, 0.94) 40%, rgba(247, 238, 230, 0.35) 72%, transparent);
+  }
+
+  .home-page__hero-content {
+    left: 5%;
+    width: 72%;
+  }
+
+  .home-page__hero-content h1 {
+    font-size: clamp(1.5rem, 6vw, 2.1rem);
+    letter-spacing: -0.04em;
+  }
+
+  .home-page__carousel-arrow {
+    width: 32px;
+    height: 32px;
+  }
+
+  .home-page__carousel-arrow.home-page__previous {
+    left: 8px;
+  }
+
+  .home-page__carousel-arrow.home-page__next {
+    right: 8px;
+  }
+
+  .home-page__categories {
+    padding: 65px 5% 0;
+  }
+
+  .home-page__products {
+    padding: 1.25rem 5% 2rem;
+  }
+
+  .home-page__toolbar {
+    gap: 0.45rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .home-page__toolbar select,
+  .home-page__sale-filter {
+    min-height: 1.9rem;
+    padding: 0 0.65rem;
+    font-size: 0.65rem;
+  }
+
+  .home-page__sort {
+    margin-left: 0;
+  }
+
+  .home-page__section-heading {
+    align-items: center;
+    margin-bottom: 22px;
+  }
+
+  .home-page__section-heading h2 {
+    font-size: 26px;
+  }
+
+  .home-page__text-link {
+    font-size: 10px;
+  }
+
+  .home-page__category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .home-page__category-card {
+    height: 270px;
+  }
+
+  .home-page__category-info h3 {
+    font-size: 18px;
+  }
+
+  .product-grid--home {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 13px;
+  }
+
+  .home-page__newsletter {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 65px;
+    padding: 40px 6%;
+  }
+
+  .home-page__newsletter-form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .home-page__hero {
+    height: 12rem;
+  }
+
+  .home-page__hero-content {
+    width: 75%;
+  }
+
+  .home-page__hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .home-page__category-card {
+    height: 220px;
+  }
+
+  .home-page__section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+}
