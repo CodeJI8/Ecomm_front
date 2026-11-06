@@ -69,10 +69,17 @@ export default function ShoppingAssistant() {
       {isOpen && (
         <section className="shopping-assistant__panel" aria-label="AI Shopping Assistant">
           <header className="shopping-assistant__header">
-            <div className="shopping-assistant__avatar" aria-hidden="true">AI</div>
+            <div className="shopping-assistant__avatar" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 3v2M8 3h8" />
+                <rect x="4" y="6" width="16" height="14" rx="4" />
+                <path d="M8.5 12h.01M15.5 12h.01M9 16h6" />
+              </svg>
+              <span>AI</span>
+            </div>
             <div className="shopping-assistant__heading">
               <h2>AI Shopping Assistant</h2>
-              <span>Here to help you shop</span>
+              <span>AI shopping bot · Not customer care</span>
             </div>
             <button
               className="shopping-assistant__close"
@@ -152,9 +159,12 @@ export default function ShoppingAssistant() {
           </svg>
         ) : (
           <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5Z" />
+            <path d="M12 3v2M8 3h8" />
+            <rect x="4" y="6" width="16" height="14" rx="4" />
+            <path d="M8.5 12h.01M15.5 12h.01M9 16h6" />
           </svg>
         )}
+        <span>{isOpen ? "Close" : "AI Shop Bot"}</span>
       </button>
     </div>
   );
