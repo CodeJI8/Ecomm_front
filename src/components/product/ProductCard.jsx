@@ -73,27 +73,43 @@ export default function ProductCard({ product, onAdd, isFavorite = false, onTogg
             ? <span>{ratingValue.toFixed(1)}{reviewCount > 0 ? ` (${reviewCount})` : ""}</span>
             : <span>No reviews yet</span>}
         </div>
-        <div className="product-card__price">
-          <span>{formatPrice(product.price)}</span>
-          {discount > 0 && (
-            <>
-              <del>{formatPrice(compareAtPrice)}</del>
-              <span className="product-card__discount" aria-label={`${discount}% off`}>−{discount}%</span>
-            </>
+        {hasStock && stock > 0 && stock <= 5 && <p className="product-card__stock">Only {stock} left</p>}
+        <div className="product-card__purchase-row">
+          <div className="product-card__price">
+            <span>{formatPrice(product.price)}</span>
+            {discount > 0 && (
+              <>
+                <del>{formatPrice(compareAtPrice)}</del>
+                <span className="product-card__discount" aria-label={`${discount}% off`}>−{discount}%</span>
+              </>
+            )}
+          </div>
+          {onAdd && (
+            <div className="product-card__actions">
+              <button
+                className="common-button product-card__add"
+                type="button"
+                aria-label={adding ? "Adding to cart" : added ? "Added to cart" : `Add ${product.name} to cart`}
+                title={added ? "Added to cart" : "Add to cart"}
+                onClick={addToCart}
+                disabled={adding || (hasStock && stock <= 0)}
+              >
+                {added ? (
+                  <span aria-hidden="true">✓</span>
+                ) : (
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 1.9-1.4L22 8H6" />
+                    <circle cx="10" cy="20" r="1" />
+                    <circle cx="18" cy="20" r="1" />
+                  </svg>
+                )}
+              </button>
+              <button className="common-button common-button--secondary product-card__buy" type="button" aria-label="Buy now" title="Buy now" onClick={buyNow} disabled={hasStock && stock <= 0}>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" /></svg>
+              </button>
+            </div>
           )}
         </div>
-        {hasStock && stock > 0 && stock <= 5 && <p className="product-card__stock">Only {stock} left</p>}
-        {onAdd && (
-          <div className="product-card__actions">
-            <button className="common-button common-button--purchase product-card__add" type="button" onClick={addToCart} disabled={adding || (hasStock && stock <= 0)}>
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 1.9-1.4L22 8H6" /><circle cx="10" cy="20" r="1" /><circle cx="18" cy="20" r="1" /></svg>
-              {adding ? "Adding…" : added ? "Added ✓" : "Add to cart"}
-            </button>
-            <button className="common-button common-button--secondary product-card__buy" type="button" aria-label="Buy now" title="Buy now" onClick={buyNow} disabled={hasStock && stock <= 0}>
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" /></svg>
-            </button>
-          </div>
-        )}
         <span className="visually-hidden" aria-live="polite">{added ? `${product.name} added to cart` : ""}</span>
       </div>
     </article>
