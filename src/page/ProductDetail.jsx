@@ -132,8 +132,8 @@ export default function ProductDetail() {
                     <span className="product-detail__stock-note">{stock} available</span>
                   </div>
                   <div className="product-detail__buttons">
-                    <Button onClick={buyNow}>Buy now</Button>
-                    <Button variant="secondary" onClick={() => addItem(product, quantity)}>Add to cart</Button>
+                    <Button variant="secondary" onClick={buyNow}>Buy now</Button>
+                    <Button variant="purchase" onClick={() => addItem(product, quantity)}>Add to cart</Button>
                   </div>
                 </div>
               )}

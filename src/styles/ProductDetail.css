@@ -32,7 +32,7 @@
 }
 
 .product-detail__breadcrumb a:hover {
-  color: #064b35;
+  color: var(--color-accent);
 }
 
 .product-detail__content {
@@ -75,7 +75,7 @@
 }
 
 .product-detail__thumbnails button.is-active {
-  border: 2px solid #064b35;
+  border: 2px solid var(--color-accent);
 }
 
 .product-detail__thumbnails .image-placeholder {
@@ -119,7 +119,7 @@
   align-items: center;
   gap: 0.5rem;
   margin: 0.65rem 0 1rem;
-  color: #16823a;
+  color: var(--text-secondary);
   font-size: 0.9rem;
   letter-spacing: 0.08em;
 }
@@ -154,7 +154,7 @@
 }
 
 .product-detail__price span {
-  color: var(--color-danger);
+  color: var(--text-secondary);
   font-size: 0.72rem;
   font-weight: 600;
 }
@@ -208,7 +208,7 @@
   border: 0;
   border-radius: 50%;
   color: var(--color-text);
-  background: transparent;
+  background: var(--transparent);
   font-size: 1.15rem;
 }
 
@@ -236,19 +236,20 @@
 
 .product-detail__buttons .common-button {
   min-width: 0;
-  min-height: 2.8rem;
-  padding: 0.65rem 0.8rem;
-  border-radius: 999px;
-  border-color: #064b35;
-  font-size: 0.8rem;
 }
 
-.product-detail__buttons .common-button--primary {
-  background: #064b35;
+.product-detail__stock:not(.is-out)::before {
+  display: inline-block;
+  width: 0.45rem;
+  height: 0.45rem;
+  margin-right: 0.35rem;
+  border-radius: 50%;
+  background: var(--success);
+  content: "";
 }
 
-.product-detail__buttons .common-button--secondary {
-  color: #064b35;
+.product-detail__stock.is-out {
+  color: var(--error);
 }
 
 .product-detail__service-note {
@@ -261,7 +262,7 @@
 }
 
 .product-detail__service-note > span {
-  color: #c76b25;
+  color: var(--text-secondary);
   font-size: 1.1rem;
 }
 
@@ -289,8 +290,4 @@
     gap: var(--space-2);
   }
 
-  .product-detail__buttons .common-button {
-    padding: 0.6rem;
-    font-size: 0.72rem;
-  }
 }

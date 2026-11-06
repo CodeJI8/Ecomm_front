@@ -1,19 +1,74 @@
 .common-button {
-  min-height: 2.75rem;
-  padding: 0.7rem 1.2rem;
-  border: 1px solid var(--color-accent);
-  border-radius: var(--radius-sm);
-  font-weight: 700;
+  min-height: 2.4rem;
+  padding: 0.55rem 1rem;
+  border: 1px solid var(--brand);
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background-color 0.15s, border-color 0.15s, box-shadow 0.15s;
 }
 
 .common-button--primary {
-  color: var(--color-inverse);
-  background: var(--color-accent);
+  border-color: var(--text);
+  color: var(--bg);
+  background: var(--text);
+}
+
+.common-button--primary:not(:disabled):hover {
+  border-color: var(--text-secondary);
+  background: var(--text-secondary);
+}
+
+.common-button--primary:not(:disabled):active {
+  border-color: var(--text-secondary);
+  background: var(--text-secondary);
 }
 
 .common-button--secondary {
-  color: var(--color-accent);
-  background: transparent;
+  color: var(--brand);
+  background: var(--transparent);
+}
+
+.common-button--purchase {
+  min-height: 3rem;
+  padding: 0.7rem 1.1rem;
+  border: 1px solid var(--cta);
+  border-radius: 8px;
+  color: var(--cta-text);
+  background: var(--cta);
+  box-shadow: var(--shadow-cta);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.common-button--purchase svg {
+  margin-right: 0.4rem;
+}
+
+.common-button--purchase:not(:disabled):hover {
+  border-color: var(--cta-hover);
+  color: var(--cta-text);
+  background: var(--cta-hover);
+  box-shadow: var(--shadow-cta);
+}
+
+.common-button--purchase:not(:disabled):active {
+  border-color: var(--cta-active);
+  color: var(--cta-text);
+  background: var(--cta-active);
+  box-shadow: none;
+}
+
+.common-button--primary:focus-visible,
+.common-button--secondary:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+.common-button--purchase:focus-visible,
+.common-button:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
 }
 
 .common-button:disabled {

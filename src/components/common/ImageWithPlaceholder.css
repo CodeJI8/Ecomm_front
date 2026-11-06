@@ -27,8 +27,8 @@
 .image-placeholder__art svg {
   width: 100%;
   height: 100%;
-  fill: none;
-  stroke: currentColor;
+  fill: var(--paint-none);
+  stroke: var(--current-color);
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 2;
@@ -36,5 +36,5 @@
 
 .image-placeholder__art circle {
   fill: var(--color-neutral-400);
-  stroke: none;
+  stroke: var(--paint-none);
 }

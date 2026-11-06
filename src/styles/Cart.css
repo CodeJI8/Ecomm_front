@@ -67,7 +67,7 @@
   padding: 0;
   border: 0;
   color: var(--color-danger);
-  background: transparent;
+  background: var(--transparent);
   font-size: var(--font-size-xs);
 }
 

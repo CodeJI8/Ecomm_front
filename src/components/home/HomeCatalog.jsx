@@ -9,9 +9,9 @@ const getCategory = (product) => product.category ?? product.categories?.[0];
 
 export default function HomeCatalog({ products, loading, error, onRetry, onAdd, favoriteIds, onToggleFavorite }) {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [categoryFilter, setCategoryFilter] = useState("");
   const [priceFilter, setPriceFilter] = useState("");
   const [sortOrder, setSortOrder] = useState("featured");
+  const categoryFilter = searchParams.get("category") ?? "";
   const saleOnly = searchParams.get("sale") === "1";
   const searchQuery = searchParams.get("q")?.trim().toLocaleLowerCase() ?? "";
   const categories = useMemo(() => {
@@ -50,7 +50,11 @@ export default function HomeCatalog({ products, loading, error, onRetry, onAdd, 
       <div className="home-page__toolbar" aria-label="Filter and sort products">
         <label>
           <span className="visually-hidden">Filter by category</span>
-          <select value={categoryFilter} onChange={(event) => setCategoryFilter(event.target.value)}>
+          <select value={categoryFilter} onChange={(event) => setSearchParams((current) => {
+            if (event.target.value) current.set("category", event.target.value);
+            else current.delete("category");
+            return current;
+          })}>
             <option value="">All categories</option>
             {categories.map((category) => <option key={category} value={category}>{category}</option>)}
           </select>

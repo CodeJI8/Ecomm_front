@@ -155,6 +155,7 @@ export default function OrderHistory() {
                 {canPay && (
                   <div className="order-history__payment">
                     <Button
+                      variant="purchase"
                       type="button"
                       disabled={payingOrderId !== null}
                       onClick={() => payForOrder(orderId)}

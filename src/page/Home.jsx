@@ -2,6 +2,7 @@ import { useCallback, useMemo, useState } from "react";
 import HomeCatalog from "../components/home/HomeCatalog";
 import HomeCategorySection from "../components/home/HomeCategorySection";
 import HomeHero from "../components/home/HomeHero";
+import HomeTrustStrip from "../components/home/HomeTrustStrip";
 import useAsync from "../hooks/useAsync";
 import useCart from "../hooks/useCart";
 import { getCategories, getProducts } from "../api";
@@ -52,6 +53,7 @@ export default function Home() {
   return (
     <main className="home-page">
       <HomeHero promoProduct={promoProduct} />
+      <HomeTrustStrip categories={categories} />
       <HomeCatalog
         products={products}
         loading={productResult.loading}
@@ -67,14 +69,6 @@ export default function Home() {
         error={categoryResult.error}
         onRetry={() => categoryResult.run()}
       />
-      <section className="home-page__newsletter">
-        <div><span className="home-page__section-eyebrow">A LITTLE SOMETHING EXTRA</span><h2>Good things, delivered.</h2><p>Get updates on new arrivals, exclusive offers, and more.</p></div>
-        <form className="home-page__newsletter-form" onSubmit={(event) => { event.preventDefault(); event.currentTarget.reset(); }}>
-          <label className="visually-hidden" htmlFor="newsletter-email">Your email address</label>
-          <input id="newsletter-email" type="email" placeholder="Your email address" required />
-          <button type="submit">Subscribe ↗</button>
-        </form>
-      </section>
     </main>
   );
 }

@@ -24,11 +24,11 @@ export default function Navbar() {
     <header className="site-nav">
       <Link className="site-nav__brand" to="/" onClick={closeMenu}>
         <svg className="site-nav__brand-mark" viewBox="0 0 32 32" aria-hidden="true">
-          <path d="M4 8h3l3.2 14h14.1L28 12H9" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" />
-          <circle cx="12.5" cy="26" r="1.8" fill="#f2a900" />
-          <circle cx="23.5" cy="26" r="1.8" fill="#f2a900" />
-          <path d="M14 7c.2-3.5 2.2-5.4 5.5-5.5-.1 3.2-1.8 5.1-5.5 5.5Z" fill="#16823a" />
-          <path d="M14.5 8c-.2-2.7-1.7-4.1-4.2-4.3.1 2.4 1.4 4 4.2 4.3Z" fill="#16823a" />
+          <path d="M4 8h3l3.2 14h14.1L28 12H9" fill="var(--paint-none)" stroke="var(--current-color)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" />
+          <circle cx="12.5" cy="26" r="1.8" fill="var(--text-muted)" />
+          <circle cx="23.5" cy="26" r="1.8" fill="var(--text-muted)" />
+          <path d="M14 7c.2-3.5 2.2-5.4 5.5-5.5-.1 3.2-1.8 5.1-5.5 5.5Z" fill="var(--brand)" />
+          <path d="M14.5 8c-.2-2.7-1.7-4.1-4.2-4.3.1 2.4 1.4 4 4.2 4.3Z" fill="var(--brand)" />
         </svg>
         <span>Shopcart</span>
       </Link>
@@ -58,7 +58,7 @@ export default function Navbar() {
           {user && <button className="site-nav__logout" type="button" onClick={() => { logout(); closeMenu(); }}>Log out</button>}
           <Link className="site-nav__cart" to="/cart" onClick={closeMenu}>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 1.9-1.4L22 8H6" /><circle cx="10" cy="20" r="1" /><circle cx="18" cy="20" r="1" /></svg>
-            Cart{count > 0 && <span aria-label={`${count} items`}>{count}</span>}
+            Cart{count > 0 && <span aria-label={`${count} items in cart`} aria-live="polite" aria-atomic="true">{count}</span>}
           </Link>
         </div>
       </nav>

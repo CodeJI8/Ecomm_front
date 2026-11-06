@@ -11,7 +11,7 @@
   padding: 12px 45px;
   color: var(--color-inverse);
   background: var(--color-ink);
-  font-size: 11px;
+  font-size: 0.875rem;
   letter-spacing: 0.35px;
   text-align: center;
 }
@@ -22,7 +22,7 @@
   height: clamp(12rem, 21vw, 17rem);
   margin: 0 5%;
   overflow: hidden;
-  background: #f7eee6;
+  background: var(--surface);
 }
 
 .home-page__hero-image,
@@ -43,10 +43,10 @@
 .home-page__hero-overlay {
   background: linear-gradient(
     90deg,
-    #f7eee6 0%,
-    #f7eee6 38%,
-    rgba(247, 238, 230, 0.8) 54%,
-    transparent 82%
+    var(--surface) 0%,
+    var(--surface) 38%,
+    color-mix(in srgb, var(--surface) 80%, var(--transparent)) 54%,
+    var(--transparent) 82%
   );
 }
 
@@ -61,16 +61,28 @@
 .home-page__eyebrow,
 .home-page__section-eyebrow {
   display: block;
-  color: #075037;
-  font-size: 0.65rem;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.12em;
 }
 
+.home-page__offer-pill {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+  color: var(--text);
+  background: var(--bg);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
 .home-page__hero-content h1 {
   margin: 0.5rem 0;
-  color: #073e2d;
-  font: 700 clamp(1.65rem, 3.5vw, 2.6rem)/1.1 var(--font-heading);
+  color: var(--text);
+  font: 700 clamp(2.4rem, 5vw, 4rem)/1.03 var(--font-heading);
   letter-spacing: -0.04em;
 }
 
@@ -78,25 +90,43 @@
   max-width: 25rem;
   margin: 0 0 0.85rem;
   color: var(--color-neutral-700);
-  font-size: 0.78rem;
+  font-size: 1rem;
+}
+
+.home-page__hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
 }
 
 .home-page__primary-button {
   display: inline-flex;
-  min-height: 2.25rem;
+  min-height: 3rem;
   align-items: center;
   gap: 0.7rem;
-  padding: 0 1rem;
-  border-radius: 999px;
-  color: var(--color-inverse);
-  background: #064b35;
-  font-size: 0.72rem;
-  font-weight: 600;
-  transition: background 0.2s;
+  padding: 0.7rem 1.1rem;
+  border: 1px solid var(--brand);
+  border-radius: 8px;
+  color: var(--bg);
+  background: var(--brand);
+  font-size: 1rem;
+  font-weight: 700;
+  transition: background-color 0.18s ease, border-color 0.18s ease;
 }
 
 .home-page__primary-button:hover {
-  background: #073e2d;
+  border-color: var(--brand-hover);
+  color: var(--bg);
+  background: var(--brand-hover);
+}
+
+.home-page__deals-link {
+  color: var(--brand);
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 
 .home-page__primary-button span {

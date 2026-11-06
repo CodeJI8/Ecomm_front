@@ -45,7 +45,7 @@ export default function Cart() {
             <h2>Order summary</h2>
             <p><span>Subtotal</span><strong>{formatPrice(total)}</strong></p>
             <p><span>Total</span><strong>{formatPrice(total)}</strong></p>
-            <Button type="button" onClick={() => navigate("/checkout")}>Proceed to checkout</Button>
+            <Button variant="purchase" type="button" onClick={() => navigate("/checkout")}>Proceed to checkout</Button>
           </aside>
         </div>
       )}

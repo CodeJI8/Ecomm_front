@@ -139,7 +139,7 @@ export default function Checkout() {
           <p className="order-form__note">
             Your order total and item availability will be confirmed by the store.
           </p>
-          <Button type="submit" disabled={submitting}>
+          <Button variant="purchase" type="submit" disabled={submitting}>
             {submitting ? "Placing order…" : "Place Order"}
           </Button>
           {submitting && <Loader label="Placing your order" />}

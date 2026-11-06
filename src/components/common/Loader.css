@@ -11,7 +11,7 @@
   width: 1.5rem;
   height: 1.5rem;
   border: 3px solid var(--color-border);
-  border-top-color: var(--color-accent);
+  border-top-color: var(--text-muted);
   border-radius: 50%;
   animation: common-loader-spin 0.7s linear infinite;
 }
